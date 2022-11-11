@@ -13,11 +13,9 @@
     <h1 id="number">123.00</h1>
     <script>
         document.getElementById("ua").innerText = navigator.userAgent;
-        const number = document.getElementById("number");
-        
-        number.innerText = new Intl.NumberFormat(navigator.language, {
+        document.getElementById("number").innerText = new Intl.NumberFormat(navigator.language, {
             trailingZeroDisplay: "stripIfInteger"
-        }).format(number.innerText);
+        }).format(123.00);
     </script>
 </body>
 </html>
