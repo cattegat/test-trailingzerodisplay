@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>* { font-family: monospace; }</style>
+</head>
+<body>
+    <p><strong>Your User-Agent:</strong> <i id="ua"></i></p>
+    <p>If you see an integer (no tailing 0's) below, your browser supports <i><strong>"options.trailingZeroDisplay"</strong></i> in <i><strong>"Intl.NumberFormat()"</strong></i></p>
+    <h1 id="number">123.00</h1>
+    <script>
+        document.getElementById("ua").innerText = navigator.userAgent;
+        const number = document.getElementById("number");
+        
+        number.innerText = new Intl.NumberFormat(navigator.language, {
+            trailingZeroDisplay: "stripIfInteger"
+        }).format(number.innerText);
+    </script>
+</body>
+</html>
